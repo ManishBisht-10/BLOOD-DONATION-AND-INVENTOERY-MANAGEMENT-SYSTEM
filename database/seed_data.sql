@@ -33,7 +33,7 @@ VALUES
 (3, 2, '2025-03-10', 1, 'pending');
 
 -- Insert sample requests
-INSERT INTO Request (hospital_id, blood_group, quantity, status, request_date, fulfilled_by)
+INSERT INTO Requests (hospital_id, blood_group, quantity, status, request_date, fulfilled_by)
 VALUES
 (2, 'A+', 2, 'pending', '2025-04-15', NULL),
 (1, 'B-', 1, 'approved', '2025-04-20', 2);

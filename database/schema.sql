@@ -69,7 +69,8 @@ CREATE TABLE Donation (
 -- ======================
 -- TABLE: Request
 -- ======================
-CREATE TABLE Request (
+-- Renamed to `Requests` to avoid possible reserved-word conflicts
+CREATE TABLE Requests (
   request_id INT AUTO_INCREMENT PRIMARY KEY,
   hospital_id INT,
   blood_group VARCHAR(5),

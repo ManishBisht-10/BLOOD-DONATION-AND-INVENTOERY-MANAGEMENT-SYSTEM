@@ -22,8 +22,8 @@ CREATE TRIGGER after_donation_approval
 AFTER UPDATE ON Donation
 FOR EACH ROW
 BEGIN
+  DECLARE donor_bg VARCHAR(5);
   IF NEW.status = 'approved' THEN
-    DECLARE donor_bg VARCHAR(5);
     SELECT blood_group INTO donor_bg FROM Donor WHERE donor_id = NEW.donor_id;
 
     IF EXISTS (SELECT * FROM Inventory WHERE hospital_id = NEW.hospital_id AND blood_group = donor_bg) THEN
@@ -43,7 +43,7 @@ DELIMITER ;
 -- =========================================
 DELIMITER //
 CREATE TRIGGER after_request_fulfilled
-AFTER UPDATE ON Request
+AFTER UPDATE ON Requests
 FOR EACH ROW
 BEGIN
   IF NEW.status = 'fulfilled' THEN
@@ -53,6 +53,7 @@ BEGIN
   END IF;
 END //
 DELIMITER ;
+ 
 
 -- =========================================
 -- STORED PROCEDURE: Check Blood Availability
@@ -73,6 +74,6 @@ DELIMITER ;
 DELIMITER //
 CREATE PROCEDURE ApproveRequest(IN req_id INT)
 BEGIN
-  UPDATE Request SET status = 'approved' WHERE request_id = req_id;
+  UPDATE Requests SET status = 'approved' WHERE request_id = req_id;
 END //
 DELIMITER ;
