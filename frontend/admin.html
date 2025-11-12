@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — BloodDonate</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="admin">
+  <header class="topbar">
+    <div class="brand"><span class="logo">BD</span><h1>BloodDonate</h1></div>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="admin.html" class="active">Admin</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="row between">
+        <h2>Admin Dashboard</h2>
+        <div><button class="btn ghost" id="admin-logout">Logout</button></div>
+      </div>
+
+      <div class="hint tiny muted">Manage hospitals & view system statistics</div>
+
+      <div class="card inner">
+        <h3>Hospitals</h3>
+        <div id="admin-hosp-list" class="muted tiny">No hospitals yet.</div>
+      </div>
+
+      <div class="card inner" style="margin-top:12px">
+        <h3>System Stats</h3>
+        <div class="form-row double">
+          <div>
+            <label>Registered Donors</label>
+            <input id="admin-stat-donors" readonly>
+          </div>
+          <div>
+            <label>Registered Hospitals</label>
+            <input id="admin-stat-hosp" readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Open Requests</label>
+          <input id="admin-stat-req" readonly>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

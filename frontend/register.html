@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register — BloodDonate</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="register">
+  <header class="topbar">
+    <div class="brand"><span class="logo">BD</span><h1>BloodDonate</h1></div>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="register.html" class="active">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Create Account</h2>
+      <div class="tiny muted">Choose portal and fill required information</div>
+
+      <div class="form-row">
+        <label>Portal</label>
+        <select id="reg-portal">
+          <option value="donor">Donor</option>
+          <option value="hospital">Hospital</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <!-- Donor -->
+      <div id="donor-fields" class="portal-fields">
+        <div class="form-row">
+          <label>Full Name</label>
+          <input id="donor-name" type="text" placeholder="John Doe">
+        </div>
+        <div class="form-row">
+          <label>Phone (10 digits)</label>
+          <input id="donor-phone" type="text" maxlength="10" placeholder="9876543210">
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input id="donor-email" type="email" placeholder="you@gmail.com">
+        </div>
+        <div class="form-row double">
+          <div>
+            <label>Age</label>
+            <input id="donor-age" type="number" min="16" max="100" placeholder="age">
+          </div>
+          <div>
+            <label>Blood Type</label>
+            <select id="donor-blood">
+              <option value="">-- Select --</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Days since last donation</label>
+          <input id="donor-days" type="number" min="0" placeholder="e.g., 90">
+        </div>
+        <div class="form-row">
+          <label>Any disease / condition? (brief)</label>
+          <textarea id="donor-disease" rows="3" placeholder="None / Diabetes, etc."></textarea>
+        </div>
+      </div>
+
+      <!-- Hospital -->
+      <div id="hospital-fields" class="portal-fields hidden">
+        <div class="form-row">
+          <label>Hospital Name</label>
+          <input id="h-name" type="text" placeholder="City Hospital">
+        </div>
+        <div class="form-row">
+          <label>Phone (10 digits)</label>
+          <input id="h-phone" type="text" maxlength="10" placeholder="9876543210">
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input id="h-email" type="email" placeholder="hospital@mail.com">
+        </div>
+        <div class="form-row">
+          <label>License Number (unique)</label>
+          <input id="h-license" type="text" placeholder="LIC-2025-ABC">
+        </div>
+        <div class="form-row">
+          <label>Address</label>
+          <input id="h-address" type="text" placeholder="Street, City">
+        </div>
+      </div>
+
+      <!-- Admin -->
+      <div id="admin-fields" class="portal-fields hidden">
+        <div class="form-row">
+          <label>Admin Name</label>
+          <input id="a-name" type="text" placeholder="Admin">
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input id="a-email" type="email" placeholder="admin@system.com">
+        </div>
+        <div class="form-row">
+          <label>Password</label>
+          <input id="a-pass" type="password" placeholder="choose password">
+        </div>
+      </div>
+
+      <div class="form-row actions">
+        <button class="btn" id="register-btn">Register</button>
+        <a href="login.html" class="btn ghost">Go to Login</a>
+      </div>
+
+      <div id="reg-msg" class="message"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

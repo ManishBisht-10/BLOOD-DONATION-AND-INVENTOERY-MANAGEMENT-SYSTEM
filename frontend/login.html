@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — BloodDonate</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="login">
+  <header class="topbar">
+    <div class="brand"><span class="logo">BD</span><h1>BloodDonate</h1></div>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Login</h2>
+      <div class="form-row">
+        <label>Portal</label>
+        <select id="login-portal">
+          <option value="donor">Donor</option>
+          <option value="hospital">Hospital</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Email (or hospital license for hospital portal)</label>
+        <input id="login-email" type="text" placeholder="you@domain.com or LIC-...">
+      </div>
+      <div class="form-row">
+        <label>Password</label>
+        <input id="login-password" type="password" placeholder="password">
+      </div>
+
+      <div class="form-row actions">
+        <button class="btn" id="login-btn">Login</button>
+        <a href="register.html" class="btn ghost">Register</a>
+      </div>
+      <div id="login-msg" class="message"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

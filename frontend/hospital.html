@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hospital — BloodDonate</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="hospital">
+  <header class="topbar">
+    <div class="brand"><span class="logo">BD</span><h1>BloodDonate</h1></div>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="hospital.html" class="active">Hospital</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="row between">
+        <h2>Hospital Dashboard</h2>
+        <div><button class="btn ghost" id="hospital-logout">Logout</button></div>
+      </div>
+
+      <div id="hospital-welcome" class="muted tiny"></div>
+
+      <div class="card inner">
+        <h3>Inventory</h3>
+        <div class="form-row double">
+          <div>
+            <label>Blood Group</label>
+            <select id="inv-blood">
+              <option>O+</option><option>O-</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option>
+            </select>
+          </div>
+          <div>
+            <label>Quantity (ml)</label>
+            <input id="inv-qty" type="number" min="50" value="500">
+          </div>
+        </div>
+        <div class="form-row actions">
+          <button class="btn" id="add-inv">Add to Inventory</button>
+        </div>
+        <div id="inv-list" class="muted tiny">No inventory yet.</div>
+      </div>
+
+      <div class="card inner" style="margin-top:12px">
+        <h3>Create Request</h3>
+        <div class="form-row double">
+          <div>
+            <label>Blood Group</label>
+            <select id="req-blood">
+              <option>O+</option><option>O-</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option>
+            </select>
+          </div>
+          <div>
+            <label>Quantity (ml)</label>
+            <input id="req-qty" type="number" min="50" value="300">
+          </div>
+        </div>
+        <div class="form-row actions">
+          <button class="btn" id="create-req">Create Request</button>
+        </div>
+        <div id="req-msg" class="message"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

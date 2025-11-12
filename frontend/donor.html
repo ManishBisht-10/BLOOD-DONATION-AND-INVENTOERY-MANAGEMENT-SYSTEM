@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Donor — BloodDonate</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="donor">
+  <header class="topbar">
+    <div class="brand"><span class="logo">BD</span><h1>BloodDonate</h1></div>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="donor.html" class="active">Donor</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="row between">
+        <h2>Donor Dashboard</h2>
+        <div><button class="btn ghost" id="donor-logout">Logout</button></div>
+      </div>
+
+      <div id="donor-welcome" class="muted tiny"></div>
+
+      <div class="card inner">
+        <h3>Record a Donation</h3>
+        <div class="form-row">
+          <label>Quantity (ml)</label>
+          <input id="donation-qty" type="number" min="100" placeholder="e.g., 350">
+        </div>
+        <div class="form-row">
+          <label>Donation Date</label>
+          <input id="donation-date" type="date">
+        </div>
+        <div class="form-row actions">
+          <button class="btn" id="donate-btn">Record Donation</button>
+        </div>
+        <div id="donate-msg" class="message"></div>
+      </div>
+
+      <div class="card inner" style="margin-top:12px">
+        <h3>Available Requests</h3>
+        <div id="requests-list" class="muted tiny">No requests yet.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
