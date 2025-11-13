@@ -1,0 +1,154 @@
+:root{  
+  --bg:#660b89;
+  --card:#090815;
+  --accent:#b3333e;
+  --muted:#040a12;
+  --glass: rgba(86, 24, 24, 0.03);
+  --success:#16a34a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:
+  radial-gradient(800px 400px at 10% 10%, rgba(99,102,241,0.12), transparent 10%),
+  radial-gradient(600px 300px at 90% 90%, rgba(16,185,129,0.06), transparent 10%),
+  var(--bg);
+  color:#020b17;
+  min-height:100vh;
+}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid rgba(255,255,255,0.02);
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#ef4444,#f97316);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+.topnav a{color:#020b13;text-decoration:none;margin-left:14px;font-weight:600}
+.topnav a.active{opacity:1}
+.container{max-width:1100px;margin:28px auto;padding:0 18px}
+.card {
+  background: rgba(255, 255, 255, 0.06); /* transparent white */
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+
+  /* subtle glass effect but no heavy blur */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* Add soft shadow */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+}
+
+.muted{color:var(--muted)}
+.hint{font-size:13px;color:var(--muted);margin-top:8px}
+.grid{display:grid;gap:12px}
+.stats{grid-template-columns:repeat(3,1fr);margin-top:12px}
+.stat{text-align:center;padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent)}
+.big{font-size:28px;font-weight:800}
+.label{color:var(--muted)}
+.form-row{margin-top:12px}
+.form-row.double{display:flex;gap:12px}
+.form-row label{display:block;font-weight:700;margin-bottom:6px;color:#cfe9ff;font-size:13px}
+input[type="text"],input[type="email"],input[type="password"],input[type="number"],select,textarea{
+  width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+  background:var(--glass);color:inherit;font-size:14px;
+}
+.actions{display:flex;gap:10px;align-items:center;margin-top:12px}
+.btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700;background:linear-gradient(90deg,var(--accent),#fb8b24);color:white}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.message{margin-top:10px;font-size:13px}
+.message.error{color:#d74e4e}
+.message.success{color:var(--success)}
+.row.between{display:flex;justify-content:space-between;align-items:center}
+.hidden{display:none}
+.inner{background:rgba(255,255,255,0.01);padding:12px;border-radius:10px}
+.tiny{font-size:13px}
+
+/* =======================================
+   BACKGROUND IMAGE FOR HOME PAGE ONLY
+   ======================================= */
+
+/* Home page full-bleed background + centered frosted hero panel */
+body[data-page="home"] {
+  /* full background image (people donating blood) - ensure the file path is correct */
+  background-image: url("../images/images.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* lighter overlay for readability but image remains clear */
+  background-color: rgba(0,0,0,0.12);
+  background-blend-mode: none;
+
+  /* ensure full viewport height remains */
+  min-height: 100vh;
+}
+
+/* Centering hero wrapper (fills viewport, centers content) */
+.home-hero{
+  min-height: calc(100vh - 120px); /* subtract header size approx. adjust if needed */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 32px 16px;
+}
+
+/* The frosted glass hero panel (login-like container) */
+.hero-panel{
+  width: 100%;
+  max-width: 980px;
+  border-radius: 18px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+
+  /* translucent panel WITHOUT blurring the background image */
+  background: rgba(232, 155, 155, 0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  /* soft shadow */
+  box-shadow: 0 20px 50px rgba(2,6,23,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle top accent like login card */
+.hero-panel::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 80px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(180,47,58,0.95), rgba(251,139,36,0.9));
+  filter: blur(10px);
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+/* keep the inner .card boxes slightly more transparent so the panel glass shows through */
+.hero-panel .card{
+  background: rgba(255,255,255,0.06); /* frosted white */
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: rgb(3, 4, 4);
+}
+
+/* make text slightly more contrasted inside hero */
+.hero-panel h2, .hero-panel p, .hero-panel .muted {
+  color: #01070d;
+}
+
+/* Responsive: tighten paddings on small screens */
+@media (max-width:700px){
+  .hero-panel{ padding:18px; border-radius:12px; }
+  .home-hero{ padding:16px; }
+}
